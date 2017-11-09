@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ewb-server-undertow-patch</artifactId>
+    <description>
+        This patches the wildfly-undertow extension to enable support of the certificate-forwarding and proxy-address-forwarding 
+        attribute in the https-listener in standalone-ewb-ha.xml (Undertow configuration).
+    </description>
+
+    <parent>
+        <groupId>com.idbs.ewb.server</groupId>
+        <artifactId>ewb-server</artifactId>
+        <version>10.3.0-SNAPSHOT</version>
+        <relativePath>../ewb-server</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-undertow</artifactId>
+            <version>${wildfly.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.idbs.util</groupId>
+            <artifactId>idbs-util-helper</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.xmlunit</groupId>
+            <artifactId>xmlunit-core</artifactId>
+            <version>2.5.0</version>
+            <scope>test</scope>
+        </dependency>        
+    </dependencies>
+
+</project>
